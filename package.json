@@ -1,0 +1,54 @@
+{
+  "name": "Webpack4ChromeExtension",
+  "title": "Webpack 4 Chrome Extension",
+  "version": "0.0.1",
+  "version_name": "It has begun.",
+  "description": "Webpack boilerplate for Chrome extensions",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./utils/npm-scripts/dev.js",
+    "build": "rm -rf app/dist && node ./utils/npm-scripts/build.js",
+    "prod": "npm run build && rm -rf app/prod && cd app & mkdir prod && cd .. && cd app/dist && crx pack --output ../prod/extension.crx --private-key ../prod/key.pem --zip-output ../prod/extension.zip",
+    "lint": "eslint app/src/",
+    "doc": "rm -rf app/doc && esdoc -c esdoc.json",
+    "hh": "crx pack --help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WebDevArchive/es6-webpack-template.git"
+  },
+  "keywords": [
+    "webpack",
+    "boilerplate",
+    "template",
+    "chrome",
+    "extension",
+    "crx",
+    "zip",
+    "es6",
+    "eslint",
+    "esdoc"
+  ],
+  "author": "Stas404: stas.webwork@gmail.com, WebDevArchive: http://vk.com/webdevarchive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebDevArchive/es6-webpack-template/issues"
+  },
+  "homepage": "https://github.com/WebDevArchive/es6-webpack-template",
+  "devDependencies": {
+    "babel-eslint": "*",
+    "babel-loader": "*",
+    "crx": "^3.0.3",
+    "css-loader": "*",
+    "esdoc": "*",
+    "eslint": "*",
+    "eslint-config-airbnb": "*",
+    "extract-text-webpack-plugin": "*",
+    "file-loader": "*",
+    "handlebars-loader": "*",
+    "html-webpack-plugin": "*",
+    "json-loader": "*",
+    "style-loader": "*",
+    "webpack": "*"
+  }
+}

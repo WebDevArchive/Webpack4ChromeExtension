@@ -1,0 +1,29 @@
+;(function() {
+
+	if ({{this.tabReload}}) {
+		chrome.tabs.getSelected(null, function(tab) {
+			var code = 'window.location.reload();';
+			chrome.tabs.executeScript(tab.id, {code: code});
+		});
+	}
+
+	var curTimestamp = Date.now();
+	var xhr = new XMLHttpRequest();
+	setInterval (function () {
+		xhr.open('GET', '{{this.timestampFilename}}', false);
+		xhr.send();
+		if (xhr.status != 200) {
+			console.log( xhr.status + ': ' + xhr.statusText );
+		} else {
+			console.log(xhr.responseText, curTimestamp);
+			if (xhr.responseText > curTimestamp) {
+				console.log('reload');
+				curTimestamp = xhr.responseText;
+				chrome.management.getSelf(function(ExtensionInfo) {
+					chrome.runtime.reload();
+				});
+			}
+		}
+	}, {{this.checkInterval}});
+
+})();

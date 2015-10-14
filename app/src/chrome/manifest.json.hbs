@@ -1,0 +1,38 @@
+{
+	"name": "{{htmlWebpackPlugin.options.PackageJson.name}}",
+	"version": "{{htmlWebpackPlugin.options.PackageJson.version}}",
+	"version_name": "{{htmlWebpackPlugin.options.PackageJson.version_name}}",
+	"description": "{{htmlWebpackPlugin.options.PackageJson.description}}",
+	"author": "{{htmlWebpackPlugin.options.PackageJson.author}}",
+	"browser_action" : {
+		"default_icon": "icons/32.png",
+		"default_popup": "popup/popup.html",
+		"default_title": "{{htmlWebpackPlugin.options.PackageJson.title}}"
+	},
+	"manifest_version": 2,
+	"permissions": [
+		"*://*/*",
+		"tabs"
+	],
+	"web_accessible_resources": ["/*"],
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"content_scripts": [
+		{
+			"css": ["main/main.css"],
+			"js": ["index/index.js"],
+			"matches": ["*://*/*"],
+			"run_at": "document_start"
+		}
+	],
+	"background": {
+		"page": "background/background.html",
+		"persistent": false
+	},
+	"options_page": "options/options.html",
+	"icons": {
+		"128": "icons/128.png",
+		"16": "icons/16.png",
+		"32": "icons/32.png",
+		"48": "icons/48.png"
+	}
+}
