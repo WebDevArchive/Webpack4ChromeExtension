@@ -2,3 +2,5 @@
 node_modules
 bower_components
 npm-debug.log
+app/dist
+app/prod

@@ -1,14 +1,13 @@
 {
-  "extends": "airbnb/base",
-  "ecmaFeatures": { modules: true },
-  "rules": {
-        "indent": [
-            2,
-            "tab"
-        ],
-	"no-console": 0,
-  },
-  "globals": {
-    "chrome": 0
-  }
+	"extends": "airbnb/base",
+	"rules": {
+		"indent": [
+			2,
+			"tab"
+		],
+		"no-console": 0,
+	},
+	"globals": {
+		"chrome": 0
+	}
 }
