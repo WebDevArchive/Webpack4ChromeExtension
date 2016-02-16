@@ -1,0 +1,29 @@
+<html>
+<head>
+	<title>Popup</title>
+	<link rel="stylesheet" href="popup.css" type="text/css" />
+	<script type="text/javascript" src="popup.js"></script>
+</head>
+
+<body>
+	<h1>Popup</h1>
+	<table>
+		<tr>
+			<td>name</td>
+			<td><%= htmlWebpackPlugin.options.PackageJson.name %></td>
+		</tr>
+		<tr>
+			<td>version</td>
+			<td><%= htmlWebpackPlugin.options.PackageJson.version %></td>
+		</tr>
+		<tr>
+			<td>version_name</td>
+			<td><%= htmlWebpackPlugin.options.PackageJson.version_name %></td>
+		</tr>
+		<tr>
+			<td>description</td>
+			<td><%= htmlWebpackPlugin.options.PackageJson.description %></td>
+		</tr>
+	</table>
+</body>
+</html>

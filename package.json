@@ -1,0 +1,59 @@
+{
+  "name": "Webpack4ChromeExtension",
+  "title": "Webpack for Chrome Extension",
+  "version": "0.0.4",
+  "version_name": "It has begun.",
+  "description": "Minimalistic Starter-kit for building Chrome-extensions with Webpack.",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf app/build && node ./npm_scripts/build.js",
+    "dev": "rm -rf app/build && node ./npm_scripts/dev.js",
+    "prod": "bash ./npm_scripts/prod.sh ./app/src/key.pem",
+    "chrome": "bash ./npm_scripts/chrome/chrome.sh",
+    "chrome:load": "bash ./npm_scripts/chrome/load-extension.sh ./app/build",
+    "install:chrome": "bash ./npm_scripts/install/google-chrome.sh",
+    "install:xvfb": "bash ./npm_scripts/install/xvfb.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WebDevArchive/Webpack4ChromeExtension.git"
+  },
+  "keywords": [
+    "webpack",
+    "boilerplate",
+    "template",
+    "starter kit",
+    "chrome",
+    "extension",
+    "watch",
+    "hmr",
+    "autoreloading",
+    "background",
+    "content",
+    "popup",
+    "options",
+    "injected",
+    "crx",
+    "es6"
+  ],
+  "author": "Stas404: stas.webwork@gmail.com, WebDevArchive: http://vk.com/webdevarchive",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebDevArchive/Webpack4ChromeExtension/issues"
+  },
+  "homepage": "https://github.com/WebDevArchive/Webpack4ChromeExtension",
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^2.8.1",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.10",
+    "webpack-dev-server": "1.14.0"
+  }
+}
